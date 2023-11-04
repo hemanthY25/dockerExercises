@@ -1,6 +1,6 @@
 const http = require('http');
 const env = require('process').env;
-require('dotenv).config();
+require('dotenv').config();
 const port = env.PORT || 8000;
 const requesthandler = (request, response) => {
     console.log(request.url);
