@@ -1,0 +1,17 @@
+#for mysql containerising
+ocker run -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -v /tmp/mysql:/var/lib/mysql --name mydb -d mysql
+
+#for nodejs containerising
+docker run -e DATABASE_PASSWORD=password -p 5000:5000 --link mydb:mydb --name=loginform loginform
+
+#enter into mysql container
+docker exec -it mysb bash
+
+run command -> mysql -u root -p ;
+
+run command -> ALTER USER root IDENTIFIED WITH mysql_native_password BY 'yourrootuserpassword' ;
+
+run command -> FLUSH PRIVILEGES; 
+
+
+NOTE: create database and tables before containerizing nodejs app
